@@ -4,6 +4,7 @@ import LedsSim.LedSim;
 
 public class Main {
     public static void main(String[] args) {
+        /* 
         // Initialize the LED simulation with a row layout
         LedSim ledSim = LedSim.getRowsSim(100);
 
@@ -18,5 +19,15 @@ public class Main {
 
         // Apply the changes to the simulation
         ledSim.apply();
+        */
+
+        SolidAnimation CYAN4LIFE = new SolidAnimation(Color.RED);
+        CYAN4LIFE.init();
+        for (int i=0; i < 100; i++)
+        {
+            CYAN4LIFE.periodic();
+        }
+        
+
     }
 }
