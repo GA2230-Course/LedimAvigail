@@ -17,7 +17,7 @@ public class SolidAnimation extends AnimationBase {
    public void periodic()
    {
       //strip.setRange(color, 0, 1); to avoid with setRange out of bounds error use setAll
-      strip.setAll(color);
+      strip.setAll(Color.GREEN); //change back to color general
    }
 
 }
