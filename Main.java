@@ -1,6 +1,5 @@
-import java.awt.Color;
-
 import LedsSim.LedSim;
+import java.awt.Color;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,19 +12,19 @@ public class Main {
 
         // Set a multiple LEDs to different colors
         ledSim.setRange(Color.ORANGE, 20, 40);;
-
+        
         // Set one LED to red
         ledSim.setLed(Color.RED, 5);
 
         // Apply the changes to the simulation
         ledSim.apply();
         */
-
-        SolidAnimation CYAN4LIFE = new SolidAnimation(Color.RED);
-        CYAN4LIFE.init();
-        for (int i=0; i < 100; i++)
-        {
-            CYAN4LIFE.periodic();
+        
+        LedSim ledStrip = LedSim.getRowsSim(100);
+        SolidAnimation animation = new SolidAnimation(Color.RED);
+        animation.setStrip(ledStrip); //we receive the ledStrip once and distribute it later
+        while (true) { 
+            animation.periodic();
         }
         
 

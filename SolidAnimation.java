@@ -1,22 +1,23 @@
 import java.awt.Color;
 
-import LedsSim.LedSim;
-
 public class SolidAnimation extends AnimationBase {
    protected Color color;
    public SolidAnimation(Color color)
    {
-    LedSim strip = LedSim.getRowsSim(100); //adding the strip for the animation
-    this.color = color;
-    setStrip(strip);
+      this.color = color;
    }
+
+   @Override
    public void init() 
    {
-    strip.setAll(color);
+      strip.setAll(color);
    }
+
+   @Override
    public void periodic()
    {
-    strip.setRange(Color.CYAN, 5, 13);
+      //strip.setRange(color, 0, 1); to avoid with setRange out of bounds error use setAll
+      strip.setAll(color);
    }
 
 }
