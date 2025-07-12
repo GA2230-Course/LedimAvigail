@@ -26,8 +26,8 @@ public class Main {
         LedController control1 = new LedController(ledStrip);
         control1.setAnimation(animation);
         
-        ledStrip.apply();
-        while (true) { 
+        while (true) {
+            ledStrip.apply(); 
             control1.periodic();
         }
 
