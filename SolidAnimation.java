@@ -4,7 +4,6 @@ import Utils.StopWatch;
 
 public class SolidAnimation extends AnimationBase {
    private Color color;
-   private StopWatch stopWatch;
    public SolidAnimation(Color color)
    {
       this.color = color;
