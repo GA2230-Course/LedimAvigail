@@ -21,10 +21,11 @@ public class Main {
         */
         
         LedSim ledStrip = LedSim.getRowsSim(100);
-        SolidAnimation animation = new SolidAnimation(Color.RED);
-        //we receive the ledStrip once and distribute it later
+        SolidAnimation solid1 = new SolidAnimation(Color.RED);
+        BlinkAnimation blink1 = new BlinkAnimation(Color.RED, Color.BLUE);
         LedController control1 = new LedController(ledStrip);
-        control1.setAnimation(animation);
+        
+        control1.setAnimation(blink1);
         
         while (true) {
             control1.periodic();

@@ -18,8 +18,8 @@ public class LedController {
     }
     public void periodic() //call order 3
     {
-        currentAnimation.periodic();
         strip.apply();
+        currentAnimation.periodic();
     }
     //strip.apply(); needs to be in ledcontroller to repeat less code.
 
