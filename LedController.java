@@ -19,8 +19,9 @@ public class LedController {
     public void periodic() //call order 3
     {
         currentAnimation.periodic();
+        strip.apply();
     }
-    //strip.apply(); needs to be inside the animation's periodic and in the init if it's not static
+    //strip.apply(); needs to be in ledcontroller to repeat less code.
 
     //LedSim inherits from LedStrip, it implements it
 }
