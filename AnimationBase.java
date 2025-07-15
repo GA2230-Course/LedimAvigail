@@ -1,3 +1,4 @@
+import LedsSim.LedSim;
 import LedsSim.LedStrip;
 
 public abstract class AnimationBase {
