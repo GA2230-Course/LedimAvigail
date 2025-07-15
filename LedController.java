@@ -14,11 +14,13 @@ public class LedController {
         currentAnimation = animation;
         currentAnimation.setStrip(strip);
         currentAnimation.init();
+        strip.apply();
     }
     public void periodic() //call order 3
     {
         currentAnimation.periodic();
     }
+    //strip.apply(); needs to be inside the animation's periodic and in the init if it's not static
 
-    
+    //LedSim inherits from LedStrip, it implements it
 }
