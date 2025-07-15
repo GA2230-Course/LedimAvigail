@@ -8,6 +8,7 @@ public abstract class AnimationBase {
     {
         this.strip = strip;
     }
+    public abstract boolean isOver();
     public abstract void init();
     public abstract void periodic();
 }

@@ -32,4 +32,15 @@ public class BlinkAnimation extends AnimationBase {
         strip.setAll(color1);
     }
 }
+
+@Override
+   public boolean isOver()
+   {
+       if (stopWatch.get() > 15) // I chose to keep the duration unchangeable between diferent interactions.
+       {
+           return true;
+       }
+
+       return false;
+   }
 }

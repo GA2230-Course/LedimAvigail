@@ -18,10 +18,14 @@ public class LedController {
     }
     public void periodic() //call order 3
     {
+        if (currentAnimation.isOver()) {
+            return;
+        }
+        
         currentAnimation.periodic();
         strip.apply();
     }
-    //strip.apply(); needs to be in ledcontroller to repeat less code.
+    //strip.apply(); needs to be in ledcontroller to repeat less code same for isOver()
 
     //LedSim inherits from LedStrip, it implements it
 }
