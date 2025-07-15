@@ -1,7 +1,10 @@
 import java.awt.Color;
 
+import Utils.StopWatch;
+
 public class SolidAnimation extends AnimationBase {
    private Color color;
+   private StopWatch stopWatch;
    public SolidAnimation(Color color)
    {
       this.color = color;
@@ -11,6 +14,8 @@ public class SolidAnimation extends AnimationBase {
    @Override
    public void init() 
    {
+      stopWatch = new StopWatch();
+      stopWatch.start();
       strip.setAll(color);
    }
 
@@ -19,6 +24,16 @@ public class SolidAnimation extends AnimationBase {
    public void periodic()
    {
       
+   }
+   @Override
+   public boolean isOver()
+   {
+       if (stopWatch.get() > 15) // I chose to keep the duration unchangeable between diferent interactions.
+       {
+           return true;
+       }
+
+       return false;
    }
 
 }
