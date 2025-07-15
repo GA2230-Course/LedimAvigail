@@ -6,25 +6,26 @@ public class TimedAnimation extends AnimationBase{
         this.animation = animation;
         this.turnOffAfter = turnOffAfter;
     }
+    @Override
     public boolean isOver()
     {
-        if (animation.getStopWatch().get() > turnOffAfter) // I chose to keep the duration unchangeable between diferent interactions.
+        if (animation.getStopWatch().get() > turnOffAfter || animation.isOver())
        {
            return true;
        }
 
        return false;
     }
+    @Override
     public void init()
     {
+        animation.setStrip(strip); //becauses the ledcontroller only set timedanimation's ledStrip and not for the Animation base inside
         animation.init();
     }
+    @Override
     public void periodic()
     {
-        if(isOver())
-        {
-            animation.periodic();
-        }
+        animation.periodic();
     }
 
 }
