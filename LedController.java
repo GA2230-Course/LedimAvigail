@@ -1,4 +1,3 @@
-
 import LedsSim.LedStrip;
 
 public class LedController {
