@@ -12,7 +12,6 @@ public class TimedAnimation extends AnimationBase{
     @Override
     public boolean isOver()
     {
-        System.out.println(stopWatch.get());
         if (stopWatch.get() > turnOffAfter || animation.isOver())
        {
          return true;
