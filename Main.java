@@ -25,7 +25,7 @@ public class Main {
         BlinkAnimation blink1 = new BlinkAnimation(Color.RED, Color.BLUE);
         LedController control1 = new LedController(ledStrip);
 
-        TimedAnimation blinkStop = new TimedAnimation(blink1, 2);
+        TimedAnimation blinkStop = new TimedAnimation(blink1, 15);
         
         //control1.setAnimation(blink1);
         control1.setAnimation(blinkStop);
