@@ -1,4 +1,3 @@
-
 import LedsSim.LedStrip;
 
 public class LedController {
@@ -19,6 +18,7 @@ public class LedController {
     public void periodic() //call order 3
     {
         if (currentAnimation.isOver()) {
+            System.out.println("Done");
             return;
         }
         

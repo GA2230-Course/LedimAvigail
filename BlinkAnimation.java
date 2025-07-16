@@ -2,9 +2,9 @@ import Utils.StopWatch;
 import java.awt.Color;
 
 public class BlinkAnimation extends AnimationBase {
- private StopWatch stopWatch;
  private Color color1;
  private Color color2;
+ private StopWatch stopWatch;
 
    public BlinkAnimation(Color color1, Color color2)
    {
@@ -36,7 +36,7 @@ public class BlinkAnimation extends AnimationBase {
 @Override
    public boolean isOver()
    {
-       if (stopWatch.get() > 15) // I chose to keep the duration unchangeable between diferent interactions.
+    if (stopWatch.get() > 60)
        {
            return true;
        }

@@ -24,8 +24,11 @@ public class Main {
         SolidAnimation solid1 = new SolidAnimation(Color.RED);
         BlinkAnimation blink1 = new BlinkAnimation(Color.RED, Color.BLUE);
         LedController control1 = new LedController(ledStrip);
+
+        TimedAnimation blinkStop = new TimedAnimation(blink1, 15);
         
-        control1.setAnimation(blink1);
+        //control1.setAnimation(blink1);
+        control1.setAnimation(blinkStop);
         
         while (true) {
             control1.periodic();
