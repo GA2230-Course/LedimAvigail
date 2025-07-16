@@ -4,6 +4,7 @@ import java.awt.Color;
 public class BlinkAnimation extends AnimationBase {
  private Color color1;
  private Color color2;
+ private StopWatch stopWatch;
 
    public BlinkAnimation(Color color1, Color color2)
    {
@@ -35,7 +36,11 @@ public class BlinkAnimation extends AnimationBase {
 @Override
    public boolean isOver()
    {
-    //logical condition for blink.
-    return 5 > 6; 
+    if (stopWatch.get() > 60)
+       {
+           return true;
+       }
+
+       return false;
    }
 }

@@ -1,17 +1,22 @@
+import Utils.StopWatch;
+
 public class TimedAnimation extends AnimationBase{
     private double turnOffAfter;
     private AnimationBase animation;
+    private StopWatch stopWatch;
     public TimedAnimation(AnimationBase animation, double turnOffAfter)
     {
         this.animation = animation;
         this.turnOffAfter = turnOffAfter;
+        stopWatch = new StopWatch();
+        stopWatch.start();
     }
     @Override
     public boolean isOver()
     {
-        if (animation.getStopWatch().get() > turnOffAfter || animation.isOver())
+        if (stopWatch.get() > turnOffAfter || animation.isOver())
        {
-           return true;
+         return true;
        }
 
        return false;
