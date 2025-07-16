@@ -17,23 +17,27 @@ public class Main {
         ledSim.setLed(Color.RED, 5);
 
         // Apply the changes to the simulation
-        ledSim.apply();
+        ledSi
+        m.apply();
         */
-        
-        LedSim ledStrip = LedSim.getRowsSim(100);
+        //LedSim ledStrip10x10 = LedSim.getRowsSim(100);
         SolidAnimation solid1 = new SolidAnimation(Color.RED);
         BlinkAnimation blink1 = new BlinkAnimation(Color.RED, Color.BLUE);
-        LedController control1 = new LedController(ledStrip);
-
+        //LedController control1 = new LedController(ledStrip10x10);
         TimedAnimation blinkStop = new TimedAnimation(blink1, 15);
         
         //control1.setAnimation(blink1);
         BlinkAnimation blink2 = new BlinkAnimation(Color.GREEN, Color.pink);
-        control1.setDefaultAnimation(blink2);
-        control1.setAnimation(blinkStop);
+        //control1.setAnimation(blinkStop);
+        GA2230Animation GAanimation = new GA2230Animation(Color.BLUE);
+        TimedAnimation GAanimationStop = new TimedAnimation(GAanimation, 15);
+        LedSim ledStrip20x20 = LedSim.getRowsSim(200);
+        LedController control2 = new LedController(ledStrip20x20);
+        control2.setDefaultAnimation(blink2);
+        control2.setAnimation(GAanimationStop);
         
         while (true) {
-            control1.periodic();
+            control2.periodic();
         }
 
     }

@@ -1,5 +1,4 @@
 package Utils;
-
 import java.time.Instant;
 
 public class StopWatch {
@@ -32,6 +31,6 @@ public class StopWatch {
      * THIS DOES NOT CONCERN YOU. PLEASE DONT ASK QUESTIONS
      */
     private double getTime() {
-        return Instant.now().toEpochMilli() / 1000;
+        return Instant.now().toEpochMilli() / 1000.0;
     }
 }
