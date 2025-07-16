@@ -8,8 +8,6 @@ public class TimedAnimation extends AnimationBase{
     {
         this.animation = animation;
         this.turnOffAfter = turnOffAfter;
-        stopWatch = new StopWatch();
-        stopWatch.start();
     }
     @Override
     public boolean isOver()
@@ -25,6 +23,8 @@ public class TimedAnimation extends AnimationBase{
     @Override
     public void init()
     {
+        stopWatch = new StopWatch();
+        stopWatch.start();
         animation.setStrip(strip); //becauses the ledcontroller only set timedanimation's ledStrip and not for the Animation base inside
         animation.init();
     }
