@@ -3,6 +3,7 @@ import LedsSim.LedStrip;
 public class LedController {
     private LedStrip strip;
     private AnimationBase currentAnimation;
+    private AnimationBase defaultAnimation;
 
     public LedController(LedStrip strip) //call order 1
     {
@@ -18,8 +19,7 @@ public class LedController {
     public void periodic() //call order 3
     {
         if (currentAnimation.isOver()) {
-            System.out.println("Done");
-            return;
+            setAnimation(defaultAnimation);
         }
         
         currentAnimation.periodic();
@@ -28,4 +28,9 @@ public class LedController {
     //strip.apply(); needs to be in ledcontroller to repeat less code same for isOver()
 
     //LedSim inherits from LedStrip, it implements it
+
+    public void setDefaultAnimation(AnimationBase animation)
+    {
+        this.defaultAnimation = animation;
+    }
 }

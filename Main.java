@@ -28,6 +28,8 @@ public class Main {
         TimedAnimation blinkStop = new TimedAnimation(blink1, 15);
         
         //control1.setAnimation(blink1);
+        BlinkAnimation blink2 = new BlinkAnimation(Color.GREEN, Color.pink);
+        control1.setDefaultAnimation(blink2);
         control1.setAnimation(blinkStop);
         
         while (true) {

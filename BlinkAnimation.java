@@ -36,7 +36,8 @@ public class BlinkAnimation extends AnimationBase {
 @Override
    public boolean isOver()
    {
-    if (stopWatch.get() > 60)
+    System.out.println(stopWatch.get());
+    if (stopWatch.get() > 10)
        {
            return true;
        }
