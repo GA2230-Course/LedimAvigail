@@ -1,6 +1,4 @@
 import LedsSim.LedStrip;
-import Utils.StopWatch;
-
 public abstract class AnimationBase {
     protected LedStrip strip;
     public void setStrip(LedStrip strip)

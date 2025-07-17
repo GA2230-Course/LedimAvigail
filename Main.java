@@ -24,11 +24,11 @@ public class Main {
         SolidAnimation solid1 = new SolidAnimation(Color.RED);
         BlinkAnimation blink1 = new BlinkAnimation(Color.RED, Color.BLUE);
         //LedController control1 = new LedController(ledStrip10x10);
-        TimedAnimation blinkStop = new TimedAnimation(blink1, 15);
+        TimedAnimation blink1Stop = new TimedAnimation(blink1, 15);
         
         //control1.setAnimation(blink1);
         BlinkAnimation blink2 = new BlinkAnimation(Color.GREEN, Color.pink);
-        //control1.setAnimation(blinkStop);
+        //control1.setAnimation(blink1Stop);
         GA2230Animation GAanimation = new GA2230Animation(Color.BLUE);
         TimedAnimation GAanimationStop = new TimedAnimation(GAanimation, 15);
         LedSim ledStrip20x20 = LedSim.getRowsSim(200);
