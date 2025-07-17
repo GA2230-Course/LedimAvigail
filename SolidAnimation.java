@@ -1,7 +1,5 @@
 import java.awt.Color;
 
-import Utils.StopWatch;
-
 public class SolidAnimation extends AnimationBase {
    private Color color;
    //Doesn't need a stopwatch
