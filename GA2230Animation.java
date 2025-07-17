@@ -1,7 +1,5 @@
 import java.awt.Color;
 
-import Utils.StopWatch;
-
 public class GA2230Animation extends AnimationBase {
    private Color color;
    //Doesn't need a stopwatch
@@ -14,7 +12,6 @@ public class GA2230Animation extends AnimationBase {
    @Override
    public void init() 
    {
-      System.out.println("I'm inside init");
       strip.setAll(color);
       //The GA part
       strip.setRange(Color.BLACK, 11, 14);

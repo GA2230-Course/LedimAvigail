@@ -21,7 +21,7 @@ public class LedController {
         if (currentAnimation.isOver()) {
             setAnimation(defaultAnimation);
         }
-        
+
         currentAnimation.periodic();
         strip.apply();
     }
