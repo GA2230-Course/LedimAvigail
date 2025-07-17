@@ -1,4 +1,5 @@
 import LedsSim.LedStrip;
+
 public abstract class AnimationBase {
     protected LedStrip strip;
     public void setStrip(LedStrip strip)
