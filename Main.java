@@ -23,10 +23,10 @@ public class Main {
         SolidAnimation solid1 = new SolidAnimation(Color.RED);
         BlinkAnimation blink1 = new BlinkAnimation(Color.RED, Color.BLUE);
         BlinkAnimation blink2 = new BlinkAnimation(Color.GREEN, Color.pink);
-        TimedAnimation blink1Stop = new TimedAnimation(blink1, 15);
+        TimedAnimation blink1Stop = new TimedAnimation(blink1, 4); //I'm lazy so changed it to 4 instead of 15
 
         GA2230Animation GAanimation = new GA2230Animation(Color.BLUE);
-        TimedAnimation GAanimationStop = new TimedAnimation(GAanimation, 15);
+        TimedAnimation GAanimationStop = new TimedAnimation(GAanimation, 4); //I'm lazy so changed it to 4 instead of 15
         LedSim ledStrip20x20 = LedSim.getRowsSim(200);
         LedController control2 = new LedController(ledStrip20x20);
 
@@ -34,7 +34,8 @@ public class Main {
         control2.setDefaultAnimation(blink2);
         //defaultanimation could be strip.setAll(Color.BLACK);
         SequentialAnimationGroup group1 = new SequentialAnimationGroup(GAanimationStop, blink1Stop);
-        control2.setAnimation(group1);
+        RandomAnimationGroup randomGroup1 = new RandomAnimationGroup(GAanimationStop, blink1Stop);
+        control2.setAnimation(randomGroup1);
         
         while (true) {
             control2.periodic();
