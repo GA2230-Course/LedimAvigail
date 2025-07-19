@@ -10,5 +10,5 @@ public abstract class AnimationBase {
     public abstract void init();
     public abstract void periodic();
 
-    //I'm adding a stopwatch object to animatino base instead of individually
+    
 }
