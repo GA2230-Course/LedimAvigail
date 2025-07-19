@@ -33,8 +33,12 @@ public class Main {
 
         control2.setDefaultAnimation(blink2);
         //defaultanimation could be strip.setAll(Color.BLACK);
-        SequentialAnimationGroup group1 = new SequentialAnimationGroup(GAanimationStop, blink1Stop);
-        RandomAnimationGroup randomGroup1 = new RandomAnimationGroup(GAanimationStop, blink1Stop);
+        //SequentialAnimationGroup group1 = new SequentialAnimationGroup(GAanimationStop, blink1Stop);
+        //RandomAnimationGroup randomGroup1 = new RandomAnimationGroup(GAanimationStop, blink1Stop);
+
+        RandomGroup randomGroup1 = new RandomGroup(GAanimationStop, blink1Stop);
+        //SequentialGroup sequentialGroup1 = new SequentialGroup(GAanimationStop, blink1Stop);
+
         control2.setAnimation(randomGroup1);
         
         while (true) {

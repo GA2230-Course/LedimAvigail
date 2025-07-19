@@ -8,31 +8,29 @@ public class SequentialGroup extends AnimationGroup{
     }
 
     @Override
-    public void init()
+    public void indexAdvancing()
     {
-        initCore();
-    }
-    @Override
-    public void periodic()
-    {
-       if (animationQueue[animationQueueIndex].isOver())
-        {
-            if (animationQueueIndex < animationQueue.length - 1)
-            {
-                animationQueueIndex++;
-                init();
-            }
-            else
-            {
-                isDone = true;
-            }
-        }
-
-        animationQueue[animationQueueIndex].periodic();
+        System.out.println("I'm initializing " + animationQueueIndex);
+        animationQueue[animationQueueIndex].setStrip(strip);
+        animationQueue[animationQueueIndex].init();
     }
     @Override
     public boolean isOver()
     {
         return isDone;
+    }
+    @Override
+    public void periodicInternal()
+    {
+        if (animationQueueIndex < animationQueue.length - 1)
+        {
+            animationQueueIndex++;
+            init();
+        }
+        else
+        {
+            isDone = true;
+        }
+        
     }
 }

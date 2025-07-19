@@ -8,7 +8,6 @@ import LedsSim.LedStrip;
 //just that the methods of the wrapper, contain the methods of the base within them, and maybe they add
 
 public abstract class AnimationGroup extends AnimationBase{
-    protected LedStrip strip;
     protected  int animationQueueIndex;
     protected  AnimationBase[] animationQueue;
 
@@ -16,14 +15,21 @@ public abstract class AnimationGroup extends AnimationBase{
     {
         this.animationQueue = animationQueue;
     }
-    public abstract boolean isOver();
-    public abstract void init();
-    public abstract void periodic();
-    public void initCore()
+    public void init()
     {
-        System.out.println("I'm initializing " + animationQueueIndex);
-        animationQueue[animationQueueIndex].setStrip(strip);
-        animationQueue[animationQueueIndex].init();
+        indexAdvancing();
     }
+    public void periodic()
+    {
+        if (animationQueue[animationQueueIndex].isOver())
+        {
+            periodicInternal();
+        }
+
+        animationQueue[animationQueueIndex].periodic();
+    }
+
+    public abstract void indexAdvancing();
+    public abstract void periodicInternal();
 
 }
